@@ -24,7 +24,7 @@ window.addEventListener("click", (event) => {
     } else if (event.target.parentNode === mobileMenu) {
         event.preventDefault();
 
-        if (event.target.innerText + ".md" === "blog.md") {
+        if (event.target.innerText.toLowerCase() + ".md" === "blog.md") {
             if (blogList.length === 0) {
                 // 블로그 리스트 로딩
                 initDataBlogList().then(() => {
@@ -35,11 +35,11 @@ window.addEventListener("click", (event) => {
             }
             // console.log(origin)
             const url = new URL(origin);
-            url.searchParams.set("menu", event.target.innerText + ".md");
+            url.searchParams.set("menu", event.target.innerText.toLowerCase() + ".md");
             window.history.pushState({}, "", url);
             mobileMenu.innerHTML = "";
         } else {
-            renderOtherContents(event.target.innerText + ".md");
+            renderOtherContents(event.target.innerText.toLowerCase() + ".md");
             mobileMenu.innerHTML = "";
         }
     } else {
