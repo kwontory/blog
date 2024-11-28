@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
 .scroll::-webkit-scrollbar {
   display: none;
@@ -6,6 +8,13 @@
 .scroll {
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
+}
+
+html {
+  font-family: 'Noto Sans KR';
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 #menu-button {
