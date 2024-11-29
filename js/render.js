@@ -322,11 +322,6 @@ function renderBlogList(searchResult = null, currentPage = 1) {
         cardElement.onclick = (event) => {
           // 블로그 게시글 링크 클릭 시 이벤트 중지 후 post 내용을 읽어와 contents 영역에 렌더링
           event.preventDefault();
-          // contents 영역을 보이게 처리
-          document.getElementById("contents").style.display = "block";
-          // blog-posts 영역을 보이지 않게 처리
-          document.getElementById("blog-posts").style.display = "none";
-          document.getElementById("pagination").style.display = "none";
 
           // console.log(post)
           // console.log(post.download_url)
@@ -349,6 +344,12 @@ function renderBlogList(searchResult = null, currentPage = 1) {
                 const url = new URL(origin);
                 url.searchParams.set("post", post.name);
                 window.history.pushState({}, "", url);
+
+                // contents 영역을 보이게 처리
+                document.getElementById("contents").style.display = "block";
+                // blog-posts 영역을 보이지 않게 처리
+                document.getElementById("blog-posts").style.display = "none";
+                document.getElementById("pagination").style.display = "none";
               });
           } catch (error) {
             styleMarkdown("post", "# Error입니다. 파일명을 확인해주세요.");
