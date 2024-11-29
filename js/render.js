@@ -428,15 +428,17 @@ function renderBlogCategory() {
     // categoryButton을 눌렀을 때
     if (evt.target === categoryButton) {
       categoryWrapper.classList.toggle("active");
+      categoryWrapper.classList.toggle("hidden");
       categoryTitle.classList.toggle("sr-only");
-      categoryContainer.classList.toggle("md:flex");
+      categoryContainer.classList.toggle("flex");
     } else if (
       categoryWrapper.classList.contains("active") &&
       !categoryWrapper.contains(evt.target)
     ) {
       categoryWrapper.classList.remove("active");
+      categoryWrapper.classList.add("hidden");
       categoryTitle.classList.add("sr-only");
-      categoryContainer.classList.remove("md:flex");
+      categoryContainer.classList.remove("flex");
     }
   });
 
