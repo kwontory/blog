@@ -125,7 +125,7 @@ async function renderMenu() {
     }
   });
 
-  window.addEventListener("resize", (event) => {
+  /*window.addEventListener("resize", (event) => {
     if (window.innerWidth > 768) {
       searchButton.classList.add("active");
       searchCont.classList.remove("hidden");
@@ -134,7 +134,7 @@ async function renderMenu() {
       searchButton.classList.remove("active");
       searchCont.classList.add("hidden");
     }
-  });
+  });*/
 
   searchInput.onkeyup = (event) => {
     if (event.key === "Enter") {
