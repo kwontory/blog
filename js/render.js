@@ -25,6 +25,8 @@ function search(keyword, kinds) {
         }
       });
       renderBlogList(searchResult);
+      // 검색어 초기화
+      searchKeyword.value ='';
     } else {
       // 만약 kinds가 있을 경우 해당 종류대로 검색(카테고리면 카테고리, 이름이면 이름)
       if (kinds) {
