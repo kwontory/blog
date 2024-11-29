@@ -97,6 +97,7 @@ async function renderMenu() {
   // 검색 버튼 클릭 시 검색창 출력
   const searchButton = document.getElementById("search-button");
   const searchCont = document.querySelector(".search-cont");
+  const searchInput = document.getElementById("search-input");
 
   let searchInputShow = false;
 
@@ -109,6 +110,7 @@ async function renderMenu() {
           searchButton.classList.add("active");
           searchCont.classList.remove("hidden");
           searchCont.classList.add("block");
+          searchInput.focus();
         } else {
           searchButton.classList.remove("active");
           searchCont.classList.add("hidden");
@@ -134,7 +136,6 @@ async function renderMenu() {
     }
   });
 
-  const searchInput = document.getElementById("search-input");
   searchInput.onkeyup = (event) => {
     if (event.key === "Enter") {
       // 엔터키 입력 시 검색 실행
