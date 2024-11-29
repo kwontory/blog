@@ -102,11 +102,8 @@ async function renderMenu() {
         const url = new URL(origin);
         url.searchParams.set("menu", menu.name);
         window.history.pushState({}, "", url);
-        // 블로그 메뉴 제외하고 카테고리 숨김 처리
-        document.querySelector('.category-aside').classList.remove('hidden');
+
       } else {
-        // 블로그 메뉴 제외하고 카테고리 숨김 처리
-        document.querySelector('.category-aside').classList.add('hidden');
         renderOtherContents(menu);
       }
     };
@@ -265,6 +262,9 @@ function renderBlogList(searchResult = null, currentPage = 1) {
     1. 검색 키워드 없이 대부분 renderBlogList()로 사용.
     2. 검색을 했을 때에만 searchResult에 목록이 담겨 들어옴
     */
+  // 블로그 메뉴 제외하고 카테고리 숨김 처리
+  document.querySelector('.category-aside').classList.remove('hidden');
+
   const pageUnit = 10;
 
   if (searchResult) {
@@ -381,6 +381,8 @@ function renderOtherContents(menu) {
   /*
     menu에 다른 콘텐츠, 예를 들어 about이나 contect를 클릭했을 때 렌더링 하는 함수
     */
+  // 블로그 메뉴 제외하고 카테고리 숨김 처리
+  document.querySelector('.category-aside').classList.add('hidden');
   // main 영역에 blog.md를 제외한 다른 파일을 렌더링
   document.getElementById("blog-posts").style.display = "none";
   document.getElementById("contents").style.display = "block";
