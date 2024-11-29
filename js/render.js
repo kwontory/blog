@@ -422,13 +422,14 @@ function renderBlogCategory() {
   categoryContainer.classList.add(...categoryContainerStyle.split(" "));
 
   const categoryWrapper = document.querySelector(".category-aside");
+  const categorylist = categoryWrapper.querySelector("aside");
   const categoryTitle = categoryWrapper.querySelector(".aside-tit");
   const categoryButton = document.getElementById("aside-button");
   window.addEventListener("click", (evt) => {
     // categoryButton을 눌렀을 때
     if (evt.target === categoryButton) {
       categoryWrapper.classList.toggle("active");
-      // categoryWrapper.classList.toggle("hidden");
+      categorylist.classList.toggle("hidden");
       categoryTitle.classList.toggle("sr-only");
       categoryContainer.classList.toggle("flex");
     } else if (
@@ -436,7 +437,7 @@ function renderBlogCategory() {
       !categoryWrapper.contains(evt.target)
     ) {
       categoryWrapper.classList.remove("active");
-      // categoryWrapper.classList.add("hidden");
+      categorylist.classList.add("hidden");
       categoryTitle.classList.add("sr-only");
       categoryContainer.classList.remove("flex");
     }
