@@ -102,7 +102,11 @@ async function renderMenu() {
         const url = new URL(origin);
         url.searchParams.set("menu", menu.name);
         window.history.pushState({}, "", url);
+        // 블로그 메뉴 제외하고 카테고리 숨김 처리
+        document.querySelector('.category-aside').classList.remove('hidden');
       } else {
+        // 블로그 메뉴 제외하고 카테고리 숨김 처리
+        document.querySelector('.category-aside').classList.add('hidden');
         renderOtherContents(menu);
       }
     };
