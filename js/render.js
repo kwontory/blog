@@ -1,9 +1,17 @@
+let searchInputShow = false;
+
 function search(keyword, kinds) {
   /*
     트러블슈팅: 실제 데이터가 없을 경우 API 호출을 한 번 실행.
     1. 메뉴에서 검색 버튼을 클릭해서 검색하였을 경우 검색 결과를 renderBlogList 함수를 통해 렌더링
     2. 포스트에서 카테고리를 클릭하였을 때 해당 카테고리로 검색하여 renderBlogList함수를 통해 렌더링
     */
+  // 모바일에서 검색 후 검색창 숨기기
+  if(window.innerWidth <= 768) {
+    searchButton.classList.remove("active");
+    searchCont.classList.add("hidden");
+    searchInputShow = false;
+  }
   keyword = keyword ? keyword.toLowerCase().trim() : "";
 
   if (blogList.length === 0) {
@@ -100,8 +108,6 @@ async function renderMenu() {
   const searchButton = document.getElementById("search-button");
   const searchCont = document.querySelector(".search-cont");
   const searchInput = document.getElementById("search-input");
-
-  let searchInputShow = false;
 
   window.addEventListener("click", (event) => {
     // 화면의 크기가 md 보다 작을 때만 동작
