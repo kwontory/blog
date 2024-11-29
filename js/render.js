@@ -1,4 +1,8 @@
+// 검색창 
 let searchInputShow = false;
+const searchButton = document.getElementById("search-button");
+const searchCont = document.querySelector(".search-cont");
+const searchInput = document.getElementById("search-input");
 
 function search(keyword, kinds) {
   /*
@@ -6,6 +10,7 @@ function search(keyword, kinds) {
     1. 메뉴에서 검색 버튼을 클릭해서 검색하였을 경우 검색 결과를 renderBlogList 함수를 통해 렌더링
     2. 포스트에서 카테고리를 클릭하였을 때 해당 카테고리로 검색하여 renderBlogList함수를 통해 렌더링
     */
+  
   // 모바일에서 검색 후 검색창 숨기기
   if(window.innerWidth <= 768) {
     searchButton.classList.remove("active");
@@ -105,10 +110,6 @@ async function renderMenu() {
   });
 
   // 검색 버튼 클릭 시 검색창 출력
-  const searchButton = document.getElementById("search-button");
-  const searchCont = document.querySelector(".search-cont");
-  const searchInput = document.getElementById("search-input");
-
   window.addEventListener("click", (event) => {
     // 화면의 크기가 md 보다 작을 때만 동작
     if (window.innerWidth <= 768) {
