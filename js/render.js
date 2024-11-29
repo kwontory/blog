@@ -645,6 +645,8 @@ async function initialize() {
   // 블로그 메뉴 제외하고 카테고리 숨김 처리
   if(!url.search.includes('blog')) {
     document.querySelector('.category-aside').classList.add('hidden');
+  } else {
+    document.querySelector('.category-aside').classList.remove('hidden');
   }
 
   if (!url.search.split("=")[1] || url.search.split("=")[1] === "blog.md") {
