@@ -428,7 +428,7 @@ function renderBlogCategory() {
     // categoryButton을 눌렀을 때
     if (evt.target === categoryButton) {
       categoryWrapper.classList.toggle("active");
-      categoryWrapper.classList.toggle("hidden");
+      // categoryWrapper.classList.toggle("hidden");
       categoryTitle.classList.toggle("sr-only");
       categoryContainer.classList.toggle("flex");
     } else if (
