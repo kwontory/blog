@@ -110,7 +110,7 @@ async function renderMenu() {
           searchButton.classList.add("active");
           searchCont.classList.remove("hidden");
           searchCont.classList.add("block");
-          searchInput.focus();
+          setTimeout(() => searchInput.focus(),300); // 포커스 지연
         } else {
           searchButton.classList.remove("active");
           searchCont.classList.add("hidden");
