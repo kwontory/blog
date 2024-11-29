@@ -361,10 +361,6 @@ function renderBlogList(searchResult = null, currentPage = 1) {
     // contents 영역을 보이지 않게 처리
     document.getElementById("contents").style.display = "none";
   }
-  // 이전 post 정보 삭제
-  const params = new URLSearchParams(window.location.search);
-  params.delete('post');
-
 }
 
 function renderOtherContents(menu) {

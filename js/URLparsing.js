@@ -111,6 +111,7 @@ window.addEventListener("popstate", (event) => {
             : styleJupyter("post", text, postInfo)
         );
     }
+    window.location.search=''; // test
   } else {
     alert("잘못된 URL입니다.");
   }
