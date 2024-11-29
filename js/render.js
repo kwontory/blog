@@ -436,7 +436,7 @@ function renderBlogCategory() {
       !categoryWrapper.contains(evt.target)
     ) {
       categoryWrapper.classList.remove("active");
-      categoryWrapper.classList.add("hidden");
+      // categoryWrapper.classList.add("hidden");
       categoryTitle.classList.add("sr-only");
       categoryContainer.classList.remove("flex");
     }
